@@ -23,5 +23,8 @@ You can add and customize your products/items in the `items.json` file. Its pret
 ### Customizing
 You can customize your store page by going into the `views` folder. discord.pay uses ejs for easier use.
 
+### Production Mode
+Once you're done testing your stuffs, you can go agead and change the `mode` property in `paypal.configure` function into `live`. For reference, you can google `paypal developer sandbox and live mode`.
+`
 I'm pretty bad at explaining stuffs and I accidentally deleted the previous draft and I only made this as quick as I can.
 Many features will come soon and this will be updated too.
