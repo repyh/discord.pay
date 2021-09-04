@@ -17,6 +17,9 @@ Just a reminder, you obviously need to have a PayPal account.
 ### onSuccess
 You can add all the functionality to either modify or do something to the user that successfully made a purchase inside `/functions/onSuccess.js` file.
 
+### Adding Products/Items
+You can add and customize your products/items in the `items.json` file. Its pretty self-explanatory.
+
 ### Customizing
 You can customize your store page by going into the `views` folder. discord.pay uses ejs for easier use.
 
