@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+body {
+    background-color: #23272A;
+}
+
+.title {
+    top: 11rem;
+    position: relative;
+    text-align: center;
+    font-family: "Balsamiq Sans";
+    color: white;
+    font-size: 80px;
+}
+
+form {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 17rem;
+}
+
+#inputUser {
+    width: 20rem;
+}
+
+#item-label {
+    color: white;
+    font-family: "Balsamiq Sans";
+}
+
+.purchase {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.title-other {
+    font-family: "Balsamiq Sans";
+    position: relative;
+    text-align: center;
+    top: 15rem;
+    color: white;
+    font-size: 80px;
+}
+
+.desc {
+    font-family: "Balsamiq Sans";
+    position: relative;
+    text-align: center;
+    top: 15rem;
+    color: white;
+}

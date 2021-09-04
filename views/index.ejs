@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= client.user.username %> - Payment Gateway</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 class="title"><%= client.user.username %></h1>
+        <div class="form-wrapper">
+            <form>
+                <div class="mb-3">
+                    <label for="items" id="item-label" class="form-label">Choose an Item</label>
+                    <select id="items" class="form-select">
+                        <% for(const item of items) {             %>
+                        <%    %><option><%=item.name%></option><% %>
+                        <% }                                      %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="inputUser" class="form-control" placeholder="Discord ID">
+                </div>
+                <button type="submit" class="btn btn-primary purchase">Purchase</button>
+            </form>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
