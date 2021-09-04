@@ -9,7 +9,7 @@ Just a reminder, you obviously need to have a PayPal account.
 1. Make a new application in https://developer.paypal.com/
 2. Clone this repo.
 3. Copy the application id and secret and paste it into `.env` file to their place.
-4. If you're not hosting this on your local system (which is more likely), you'd need to replace all `http://localhost:2000/` in the file with your domain/ip. It should automatically fill it in for you but incase, it doesn't work, do the above.
+4. If you're not hosting this on your local system (which is more likely), you'd need to replace all `http://localhost:2000/` in the file with your domain/ip. It should automatically fill it in for you but incase, it doesn't work, do the above. (This also needs to be done in the client-side javascript)
 5. Copy your discord bot token and pate it into the `.env` file.
 6. Run `node index.js`
 7. Done! Your server should be running and listen to all the payments made! To go checkout your page, goto your domain/ip.
