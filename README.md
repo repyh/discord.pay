@@ -38,4 +38,4 @@ I'm pretty bad at explaining stuffs and I accidentally deleted the previous draf
 Many features will come soon and this will be updated too.
 
 > ## Screenshot
-[![ex.png](https://i.postimg.cc/xjhFzGWX/ex.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![ex.png](https://i.postimg.cc/cL2yhKkH/ex.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
