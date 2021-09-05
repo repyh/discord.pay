@@ -12,7 +12,10 @@
                     discord.pay
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <button class="btn btn-outline-primary my-2 my-sm-0 navbar-right" id="quota" type="submit" onclick="window.open('https://github.com/repyh/discord.pay')">Github Repository</button>
+                    <button class="btn btn-outline-primary my-2 my-sm-0 navbar-right" id="home" type="submit" onclick="window.location.replace(window.location.protocol + '//' + window.location.host)">Home</button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <button class="btn btn-outline-primary my-2 my-sm-0 navbar-right" id="github" type="submit" onclick="window.open('https://github.com/repyh/discord.pay')">Github Repository</button>
                 </div>        
             </nav>
         </div>
@@ -21,9 +24,9 @@
             <form>
                 <div class="mb-3">
                     <select id="items" class="form-select bg-dark btn-outline-primary input">
-                        <% for(const item of items) {             %>
+                        <% for(const item of items) {                                %>
                         <%    %><option><%=item.name%> - $<%=item.price%></option><% %>
-                        <% }                                      %>
+                        <% }                                                         %>
                     </select>
                 </div>
                 <div class="mb-3">
