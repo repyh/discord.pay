@@ -5,6 +5,7 @@ const items = require('./items.json');
 const onSuccess = require('./functions/onSuccess');
 const db = require('quick.db');
 require('dotenv').config();
+const host = process.env.HOST ? `http://localhost:2000` : `${process.env.HOST}:${process.env.PORT}/`
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const app = express();
@@ -60,8 +61,8 @@ app.post('/checkout', (req, res) => {
             payment_method: 'paypal'
         },
         redirect_urls: {
-            return_url: `http://localhost:${process.env.PORT ?? '2000'}/success?user_id=${req.query.user_id}&item=${req.query.item}`,
-            cancel_url: `http://localhost:${process.env.PORT ?? '2000'}/failed`
+            return_url: `${host}/success?user_id=${req.query.user_id}&item=${req.query.item}`,
+            cancel_url: `${host}/failed`
         },
         transactions: [
             {
