@@ -1,23 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-
-body {
-    background-color: #23272A;
-}
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Kavoon&family=Roboto&display=swap');
 
 .title {
-    top: 11rem;
+    top: 10rem;
     position: relative;
     text-align: center;
-    font-family: "Balsamiq Sans";
+    font-family: Roboto;
     color: white;
-    font-size: 80px;
+    font-weight: bold;
+    font-size: 90px;
 }
 
 form {
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    top: 17rem;
+    top: 18.2rem;
 }
 
 #inputUser {
@@ -26,7 +23,6 @@ form {
 
 #item-label {
     color: white;
-    font-family: "Balsamiq Sans";
 }
 
 .purchase {
@@ -50,4 +46,46 @@ form {
     text-align: center;
     top: 15rem;
     color: white;
+}
+
+.input {
+    color: white;
+}
+
+.input:focus {
+    color: white !important;
+}
+
+.save {
+    color: white;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar {
+    padding-left: 25px;
+    font-family: Roboto;
+    width: 100%;
+    font-size: 20px;
+}
+
+.nav-item {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.navbar-right {
+    right: 1.5rem;
+    position: absolute;
+}
+
+.navbar-brand {
+    font-family: Kavoon;
+    font-size: 30px;
+    font-weight: lighter;
 }
