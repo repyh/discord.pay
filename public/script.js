@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const items = document.getElementById('items');
 const userID = document.getElementById('inputUser');
 const save = document.getElementById('save-id');
-const host = 'http://localhost:2000';
+const host = window.location.protocol + '//' + window.location.host;
 
 window.onload = () => {
     if(localStorage.getItem('user_id')) {
