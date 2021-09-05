@@ -60,8 +60,8 @@ app.post('/checkout', (req, res) => {
             payment_method: 'paypal'
         },
         redirect_urls: {
-            return_url: `http://localhost:${process.env.PORT || 2000}/success?user_id=${req.query.user_id}&item=${req.query.item}`,
-            cancel_url: `http://localhost:${process.env.PORT || 2000}/failed`
+            return_url: `http://localhost:${process.env.PORT ?? '2000'}/success?user_id=${req.query.user_id}&item=${req.query.item}`,
+            cancel_url: `http://localhost:${process.env.PORT ?? '2000'}/failed`
         },
         transactions: [
             {
