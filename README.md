@@ -1,6 +1,10 @@
 # discord.pay
 Express server setup for easy payment with paypal-rest-sdk for Discord Bots
 
+> ## Changelog
+- New store page design.
+- Save ID feature.
+
 > ## What is discord.pay?
 discord.pay is an express server that you can clone to integrate with your discord bot to easily add payment. discord.pay are made to be a standalone website apart from your discord bot.
 
