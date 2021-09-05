@@ -32,12 +32,13 @@ form {
 }
 
 .title-other {
-    font-family: "Balsamiq Sans";
+    font-family: Roboto;
     position: relative;
     text-align: center;
     top: 15rem;
     color: white;
     font-size: 80px;
+    font-weight: bold;
 }
 
 .desc {
@@ -88,4 +89,8 @@ form {
     font-family: Kavoon;
     font-size: 30px;
     font-weight: lighter;
+}
+
+#home {
+    margin-right: 10rem;
 }
