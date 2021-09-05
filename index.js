@@ -5,7 +5,7 @@ const items = require('./items.json');
 const onSuccess = require('./functions/onSuccess');
 const db = require('quick.db');
 require('dotenv').config();
-const host = 'https://discord-pay-demo.herokuapp.com/'; // Change this either into 'http://localhost:2000' or your hosting domain
+const host = 'https://discord-pay-demo.herokuapp.com'; // Change this either into 'http://localhost:2000' or your hosting domain
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const app = express();
