@@ -1,5 +1,7 @@
 # discord.pay
-Express server setup for easy payment with paypal-rest-sdk for Discord Bots
+Express server setup for easy payment with paypal-rest-sdk for Discord Bots.
+
+Live Demo: https://discord-pay-demo.herokuapp.com/
 
 > ## Changelog
 - New store page design.
