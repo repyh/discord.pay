@@ -23,6 +23,6 @@
         <p class="desc">You will be redirected in 5s</p>
     </body>
     <script>
-        window.onload = () => setTimeout(() => window.location.replace('http://localhost:2000/'), 5000);
+        window.onload = () => setTimeout(() => window.location.replace(window.location.protocol + '//' + window.location.host), 5000);
     </script>
 </html>
