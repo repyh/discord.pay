@@ -82,10 +82,7 @@ app.post('/checkout', (req, res) => {
         if(error) throw error;
         else {
             const redirect = payment.links.find(u => u.rel === 'approval_url');
-            return res.json({
-                message: "Success",
-                redirect: redirect.href
-            })
+            return res.redirect(redirect.href);
         }
     })
 })
