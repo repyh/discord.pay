@@ -4,8 +4,8 @@ Express server setup for easy payment with paypal-rest-sdk for Discord Bots.
 Live Demo: https://discord-pay-demo.herokuapp.com/
 
 > ## Changelog
-- New store page design.
-- Save ID feature.
+- More compact & less client-side javascript code.
+- You don't need to specify host anymore
 
 > ## What is discord.pay?
 discord.pay is an express server that you can clone to integrate with your discord bot to easily add payment. discord.pay are made to be a standalone website apart from your discord bot.
@@ -19,10 +19,9 @@ Just a reminder, you obviously need to have a PayPal account.
 1. Make a new application in https://developer.paypal.com/
 2. Clone this repo.
 3. Copy the application id and secret and paste it into `.env` file to their place.
-4. If you're not hosting this on your local system (which is more likely), you'd need to replace all `http://localhost:2000/` in the file with your domain/ip. It should automatically fill it in for you but incase, it doesn't work, do the above. (This also needs to be done in the client-side javascript)
-5. Copy your discord bot token and pate it into the `.env` file.
-6. Run `node index.js`
-7. Done! Your server should be running and listen to all the payments made! To go checkout your page, goto your domain/ip.
+4. Copy your discord bot token and pate it into the `.env` file.
+5. Run `node index.js`
+6. Done! Your server should be running and listen to all the payments made! To go checkout your page, goto your domain/ip.
 
 ### onSuccess
 You can add all the functionality to either modify or do something to the user that successfully made a purchase inside `/functions/onSuccess.js` file.
