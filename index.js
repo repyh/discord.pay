@@ -9,6 +9,7 @@ require('dotenv').config();
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const app = express();
 app.set('view engine', 'ejs');
+app.enable('trust proxy');
 app.use(express.static('public'));
 
 paypal.configure({
