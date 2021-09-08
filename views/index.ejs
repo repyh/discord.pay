@@ -21,16 +21,16 @@
         </div>
         <h1 class="title"><%= client.user.username %></h1>
         <div class="form-wrapper">
-            <form>
+            <form action="/checkout" method="POST">
                 <div class="mb-3">
-                    <select id="items" class="form-select bg-dark btn-outline-primary input">
+                    <select id="items" class="form-select bg-dark btn-outline-primary input" name="item">
                         <% for(const item of items) {                                %>
                         <%    %><option><%=item.name%> - $<%=item.price%></option><% %>
                         <% }                                                         %>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <input type="text" id="inputUser" class="form-control bg-dark btn-outline-primary input" placeholder="Discord ID" required>
+                    <input type="text" id="inputUser" class="form-control bg-dark btn-outline-primary input" name="user_id" placeholder="Discord ID" required>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input bg-dark btn-outline-primary" type="checkbox" value="" id="save-id">
