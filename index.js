@@ -29,7 +29,7 @@ app.get('/failed', (req, res) => {
     res.render('fallback.ejs');
 })
 
-app.post('/success', (req, res) => {
+app.get('/success', (req, res) => {
     if(db.get(`successful_payment.${req.query.paymentId}`) && db.get(`successful_payment.${req.query.paymentId}`) === true) return;
     db.set(`successful_payment.${req.query.paymentId}`, true);
     paypal.payment.execute(req.query.paymentId, {
