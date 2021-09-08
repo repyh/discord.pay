@@ -5,7 +5,6 @@ const items = require('./items.json');
 const onSuccess = require('./functions/onSuccess');
 const db = require('quick.db');
 require('dotenv').config();
-const host = 'https://discord-pay-demo.herokuapp.com'; // Change this either into 'http://localhost:2000' or your hosting domain
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const app = express();
@@ -30,7 +29,7 @@ app.get('/failed', (req, res) => {
     res.render('fallback.ejs');
 })
 
-app.get('/success', (req, res) => {
+app.post('/success', (req, res) => {
     if(db.get(`successful_payment.${req.query.paymentId}`) && db.get(`successful_payment.${req.query.paymentId}`) === true) return;
     db.set(`successful_payment.${req.query.paymentId}`, true);
     paypal.payment.execute(req.query.paymentId, {
@@ -44,36 +43,35 @@ app.get('/success', (req, res) => {
             }
         ]
     }, (err, payment) => {
-        if(err) {
-            // Do something when transaction failed
-            return;
-            // res.render('fallback.ejs');
-        }
+        if(err) res.render('fallback.ejs');
         res.render('success', {client})
         return onSuccess(client, {user_id: req.query.user_id, item: req.query.item});
     })
 })
 
-app.post('/checkout', (req, res) => {
+app.post('/checkout', require('body-parser').urlencoded({ extended: false }),  (req, res) => {
+    const BASE_URL = req.protocol + '://' + req.get('host');
     const payload = {
         intent: 'sale',
         payer: {
             payment_method: 'paypal'
         },
         redirect_urls: {
-            return_url: `${host}/success?user_id=${req.query.user_id}&item=${req.query.item}`,
-            cancel_url: `${host}/failed`
+            return_url: `${BASE_URL}/success?user_id=${req.body.user_id}&item=${req.body.item.split(' ')[0]}`,
+            cancel_url: `${BASE_URL}/failed`
         },
         transactions: [
             {
                 items_list: {
-                    items
+                    items: [
+                        items.find(it => it.name === req.body.item.split(' ')[0])
+                    ]
                 },
                 amount: {
                     currency: 'USD',
-                    total: items.find(it => it.name === req.query.item).price
+                    total: items.find(it => it.name === req.body.item.split(' ')[0]).price
                 },
-                description: 'Example is an example'
+                description: 'Description Example'
             }
         ]
     };
@@ -82,10 +80,7 @@ app.post('/checkout', (req, res) => {
         if(error) throw error;
         else {
             const redirect = payment.links.find(u => u.rel === 'approval_url');
-            return res.json({
-                message: "Success",
-                redirect: redirect.href
-            })
+            res.redirect(redirect.href);
         }
     })
 })
